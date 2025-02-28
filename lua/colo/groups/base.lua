@@ -13,11 +13,11 @@ function M.get(c, opts)
         CursorLine = { bg = c.grey0n },      -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         Directory = { fg = c.blue },         -- directory names (and other special names in listings)
         Added = { fg = c.green },
-        Changed = { fg = c.yellow },
+        Changed = { fg = c.cyan},
         Removed = { fg = c.red },
-        DiffAdd = { fg = c.green },                     -- diff mode: Added line |diff.txt|
-        DiffChange = { fg = c.yellow },                 -- diff mode: Changed line |diff.txt|
-        DiffDelete = { fg = c.red },                    -- diff mode: Deleted line |diff.txt|
+        DiffAdd = "Added",
+        DiffChange = "Changed",
+        DiffDelete = "Removed",
         DiffText = { fg = c.yellow, bg = c.bg_yellow }, -- diff mode: Changed text within a changed line |diff.txt|
         EndOfBuffer = { fg = c.magenta },               -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
         ErrorMsg = { fg = c.bg, bg = c.red },           -- error messages on the command line
