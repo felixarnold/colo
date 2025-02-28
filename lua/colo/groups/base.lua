@@ -3,33 +3,33 @@ local M = {}
 ---@type colo.HighlightsFn
 function M.get(c, opts)
     return {
-        Comment = { fg = c.comment },                 -- any comment
-        ColorColumn = { bg = c.grey0 },               -- used for the columns set with 'colorcolumn'
-        Conceal = {},                                 -- placeholder characters substituted for concealed text (see 'conceallevel')
-        Cursor = { fg = c.bg, bg = c.fg },            -- character under the cursor
-        lCursor = { fg = c.bg, bg = c.fg },           -- the character under the cursor when |language-mapping| is used (see 'guicursor')
-        CursorIM = { fg = c.bg, bg = c.fg },          -- like Cursor, but used when in IME mode |CursorIM|
-        CursorColumn = { bg = c.grey1 },              -- Screen-column at the cursor, when 'cursorcolumn' is set.
-        CursorLine = { bg = c.grey0n },               -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
-        Directory = { fg = c.blue },                  -- directory names (and other special names in listings)
+        Comment = { fg = c.comment },        -- any comment
+        ColorColumn = { bg = c.grey0 },      -- used for the columns set with 'colorcolumn'
+        Conceal = {},                        -- placeholder characters substituted for concealed text (see 'conceallevel')
+        Cursor = { fg = c.bg, bg = c.fg },   -- character under the cursor
+        lCursor = { fg = c.bg, bg = c.fg },  -- the character under the cursor when |language-mapping| is used (see 'guicursor')
+        CursorIM = { fg = c.bg, bg = c.fg }, -- like Cursor, but used when in IME mode |CursorIM|
+        CursorColumn = { bg = c.grey1 },     -- Screen-column at the cursor, when 'cursorcolumn' is set.
+        CursorLine = { bg = c.grey0n },      -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+        Directory = { fg = c.blue },         -- directory names (and other special names in listings)
         Added = { fg = c.green },
         Changed = { fg = c.yellow },
         Removed = { fg = c.red },
-        DiffAdd = { fg = c.green },                   -- diff mode: Added line |diff.txt|
-        DiffChange = { fg = c.yellow },               -- diff mode: Changed line |diff.txt|
-        DiffDelete = { fg = c.red_alt },              -- diff mode: Deleted line |diff.txt|
-        DiffText = { fg = c.bg, bg = c.red },         -- diff mode: Changed text within a changed line |diff.txt|
-        EndOfBuffer = { fg = c.magenta },             -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
-        ErrorMsg = { fg = c.bg, bg = c.red },         -- error messages on the command line
-        VertSplit = { fg = c.fg },                    -- the column separating vertically split windows
-        WinSeparator = { fg = c.fg, bold = true },    -- the column separating vertically split windows
-        Folded = { fg = c.grey7, bg = c.grey2 },      -- line used for closed folds
-        FoldColumn = {},                              -- 'foldcolumn'
-        SignColumn = {},                              -- column where |signs| are displayed
-        SignColumnSB = { bg = "#ff00ff" },            -- column where |signs| are displayed
-        Substitute = { bg = c.bg_blue, fg = c.blue }, -- |:substitute| replacement text highlighting
-        LineNr = { fg = c.grey4 },                    -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
-        CursorLineNr = { fg = c.grey5 },              -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+        DiffAdd = { fg = c.green },                     -- diff mode: Added line |diff.txt|
+        DiffChange = { fg = c.yellow },                 -- diff mode: Changed line |diff.txt|
+        DiffDelete = { fg = c.red },                    -- diff mode: Deleted line |diff.txt|
+        DiffText = { fg = c.yellow, bg = c.bg_yellow }, -- diff mode: Changed text within a changed line |diff.txt|
+        EndOfBuffer = { fg = c.magenta },               -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+        ErrorMsg = { fg = c.bg, bg = c.red },           -- error messages on the command line
+        VertSplit = { fg = c.fg },                      -- the column separating vertically split windows
+        WinSeparator = { fg = c.fg, bold = true },      -- the column separating vertically split windows
+        Folded = { fg = c.grey7, bg = c.grey2 },        -- line used for closed folds
+        FoldColumn = {},                                -- 'foldcolumn'
+        SignColumn = {},                                -- column where |signs| are displayed
+        SignColumnSB = { bg = "#ff00ff" },              -- column where |signs| are displayed
+        Substitute = { bg = c.bg_blue, fg = c.blue },   -- |:substitute| replacement text highlighting
+        LineNr = { fg = c.grey4 },                      -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+        CursorLineNr = { fg = c.grey5 },                -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
         LineNrAbove = { fg = c.grey4 },
         LineNrBelow = { fg = c.grey4 },
         MatchParen = { bg = c.bg_blue, fg = c.blue },    -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
@@ -79,21 +79,21 @@ function M.get(c, opts)
         Boolean = { italic = true },
         Number = { fg = c.cyan_alt },
         Float = "Number",
-        Debug = {},                                      --    debugging statements
-        Delimiter = "Special",                           --  character that needs attention
-        Error = { fg = c.red },                          -- (preferred) any erroneous construct
-        Function = { bold = true },                      -- function name (also: methods for classes)
-        Identifier = {},                                 -- (preferred) any variable name
-        Italic = { italic = true },                      -- (preferred) any italic text
-        Keyword = { fg = c.grey4, bold = true },         --  any other keyword
-        Operator = { fg = c.grey5 },                     -- "sizeof", "+", "*", etc.
-        PreProc = { fg = c.grey6 },                      -- (preferred) generic Preprocessor
-        Special = { fg = c.magenta },                    -- (preferred) any special symbol
-        Statement = { bold = true },                     -- (preferred) any statement
-        String = { fg = c.string },                      --   a string constant: "this is a string"
-        Todo = { bg = c.yellow, fg = c.grey0n },         -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
-        Type = { fg = c.magenta_alt },                   -- (preferred) int, long, char, etc.
-        Underlined = { underline = true },               -- (preferred) text that stands out, HTML links
+        Debug = {},                              --    debugging statements
+        Delimiter = "Special",                   --  character that needs attention
+        Error = { fg = c.red },                  -- (preferred) any erroneous construct
+        Function = { bold = true },              -- function name (also: methods for classes)
+        Identifier = {},                         -- (preferred) any variable name
+        Italic = { italic = true },              -- (preferred) any italic text
+        Keyword = { fg = c.grey4, bold = true }, --  any other keyword
+        Operator = { fg = c.grey5 },             -- "sizeof", "+", "*", etc.
+        PreProc = { fg = c.grey6 },              -- (preferred) generic Preprocessor
+        Special = { fg = c.magenta },            -- (preferred) any special symbol
+        Statement = { bold = true },             -- (preferred) any statement
+        String = { fg = c.string },              --   a string constant: "this is a string"
+        Todo = { bg = c.yellow, fg = c.grey0n }, -- (preferred) anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+        Type = { fg = c.magenta_alt },           -- (preferred) int, long, char, etc.
+        Underlined = { underline = true },       -- (preferred) text that stands out, HTML links
         htmlH1 = { fg = c.magenta_alt },
         htmlH2 = { fg = c.blue_alt },
         -- qfFileName = { fg = c.blue },
