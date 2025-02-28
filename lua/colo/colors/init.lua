@@ -7,7 +7,7 @@ function M.setup(opts)
     ---@class ColorScheme: colo.Palette
     local colors = {
         fg = '#efeff4',
-        bg = '#1A1A1F',
+        bg = '#1a1a1f',
         black = '#292929',
         black_alt = '#4b4b52',
         red = '#f28d79',
@@ -27,7 +27,7 @@ function M.setup(opts)
         bg_magenta = '#2e2533',
         cyan = '#86e6c6',
         cyan_alt = '#bbecdc',
-        bg_cyan = '#24332E',
+        bg_cyan = '#24332e',
         white = '#e1e1eb',
         grey0n = '#05050a',
         grey0 = '#2e2e33',
