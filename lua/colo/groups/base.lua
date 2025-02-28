@@ -13,14 +13,13 @@ function M.get(c, opts)
         CursorLine = { bg = c.grey0n },      -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         Directory = { fg = c.blue },         -- directory names (and other special names in listings)
         Added = { fg = c.green },
-        Changed = { fg = c.cyan},
-        Removed = {},
-
+        Changed = { fg = c.cyan },
+        Removed = { fg = c.red },
         DiffAdd = "Added",
         DiffChange = "Changed",
         DiffDelete = "Removed",
-        DiffText = { fg = c.cyan, bg = c.bg_cyan }, -- diff mode: Changed text within a changed line |diff.txt|
-        EndOfBuffer = { fg = c.magenta },               -- filler lines (~) after the end of the buffer.  By default, this is highlighted like |hl-NonText|.
+        DiffText = { fg = c.cyan_alt, bg = c.bg_cyan }, -- diff mode: Changed text within a changed line |diff.txt|
+        EndOfBuffer = { fg = c.magenta },               -- filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
         ErrorMsg = { fg = c.bg, bg = c.red },           -- error messages on the command line
         VertSplit = { fg = c.fg },                      -- the column separating vertically split windows
         WinSeparator = { fg = c.fg, bold = true },      -- the column separating vertically split windows
