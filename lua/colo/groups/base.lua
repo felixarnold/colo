@@ -13,7 +13,7 @@ function M.get(c, opts)
         CursorLine = { bg = c.grey0n },      -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
         Directory = { fg = c.blue },         -- directory names (and other special names in listings)
         Added = { fg = c.green },
-        Changed = { fg = c.cyan },
+        Changed = { fg = c.yellow },
         Removed = { fg = c.red },
         DiffAdd = "Added",
         DiffChange = "Changed",
