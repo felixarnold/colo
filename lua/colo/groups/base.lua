@@ -35,13 +35,13 @@ function M.get(c, opts)
         MatchParen = { bg = c.bg_blue, fg = c.blue },    -- The character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
         ModeMsg = {},                                    -- 'showmode' message (e.g., "-- INSERT -- ")
         MsgArea = { bg = c.grey0n },                     -- Area for messages and cmdline
-        MoreMsg = { fg = c.blue, bold = true },          -- |more-prompt|
+        MoreMsg = { fg = c.blue, bold = opts.font_features.use_bold },          -- |more-prompt|
         NonText = { fg = c.magenta },                    -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
         Normal = { fg = c.fg, bg = c.bg },               -- normal text
         NormalNC = { fg = c.grey5 },                     -- normal text in non-current windows
         -- NormalSB = { fg = c.fg_sidebar, bg = c.bg_sidebar }, -- normal text in sidebar
         NormalFloat = { bg = c.grey0 },                  -- Normal text in floating windows.
-        FloatBorder = { bg = c.grey0 },                  --
+        FloatBorder = { fg = c.grey0 },                  --
         FloatTitle = { bg = c.grey0 },                   --
         Pmenu = { bg = c.grey0 },                        -- Popup menu: normal item.
         PmenuMatch = { bg = c.grey0, fg = c.blue },      -- Popup menu: Matched text in normal item.
